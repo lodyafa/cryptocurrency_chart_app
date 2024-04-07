@@ -3,5 +3,5 @@ abstract class AppRoutes {
   static const String auth = '/auth';
 
   static const String home = '/home';
-  static const String account = '/chart';
+  static const String cryptoInfo = '/home/crypto_info';
 }

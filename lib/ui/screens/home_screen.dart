@@ -6,20 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider(
-      create: (context) => CryptoRepository(),
-      child: BlocProvider(
-        create: (context) => HomeBloc(
-            cryptoRepository: RepositoryProvider.of<CryptoRepository>(context))
-          ..add(HomeLoadCryptoChartEvent()),
-        child: const Scaffold(
-          backgroundColor: AppColors.background,
-          body: HomeBody(),
-        ),
+    return BlocProvider(
+      create: (context) => HomeBloc(
+          cryptoRepository: RepositoryProvider.of<CryptoRepository>(context))
+        ..add(HomeLoadCryptoChartEvent()),
+      child: const Scaffold(
+        backgroundColor: AppColors.background,
+        body: HomeBody(),
       ),
     );
   }

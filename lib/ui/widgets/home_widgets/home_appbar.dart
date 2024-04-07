@@ -7,11 +7,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
     super.key,
     required this.userName,
-    required this.userPhotoPath,
   });
 
   final String userName;
-  final String userPhotoPath;
 
   @override
   Widget build(BuildContext context) {
